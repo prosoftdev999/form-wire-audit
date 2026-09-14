@@ -1,0 +1,15 @@
+{"clock_source":"ui","local_tick":101,"coordinator_tick":202}
+{"clock_source":"ui","local_tick":1001,"coordinator_tick":2002}
+{"clock_source":"ui","local_tick":5001,"coordinator_tick":10002}
+{"clock_source":"react","local_tick":101,"coordinator_tick":304}
+{"clock_source":"react","local_tick":1001,"coordinator_tick":3004}
+{"clock_source":"react","local_tick":5001,"coordinator_tick":15004}
+{"clock_source":"worker","local_tick":101,"coordinator_tick":505}
+{"clock_source":"worker","local_tick":1001,"coordinator_tick":5005}
+{"clock_source":"worker","local_tick":5001,"coordinator_tick":25005}
+{"clock_source":"devtools","local_tick":101,"coordinator_tick":712}
+{"clock_source":"devtools","local_tick":1001,"coordinator_tick":7012}
+{"clock_source":"devtools","local_tick":5001,"coordinator_tick":35012}
+{"clock_source":"extension","local_tick":101,"coordinator_tick":1121}
+{"clock_source":"extension","local_tick":1001,"coordinator_tick":11021}
+{"clock_source":"extension","local_tick":5001,"coordinator_tick":55021}

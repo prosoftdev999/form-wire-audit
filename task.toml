@@ -1,0 +1,30 @@
+artifacts = ["/app/output/submission_requests.json"]
+
+[task]
+name = "afterquery/form-wire-audit"
+
+[metadata]
+author_name = "Thomas Morison"
+author_email = "matiasv931026@gmail.com"
+difficulty_explanation = "The capture is synthetic and models a checkout incident without customer data. In production this reconstruction would be handled by a browser-platform or senior frontend engineer. The first 96 rows already require historical DOM replay, branch-aware concurrent rendering, changing form ownership, custom-element state, validation, submitter overrides, and byte-exact request construction. The final 72 interactions add a persistent DOM event system with 132 listeners recorded on five independent clocks, nested synchronous dispatch, dynamic listener registration/removal, once/passive semantics, propagation stops, live ownership changes during dispatch, and microtasks that execute after activation but affect later attempts. The recorder aggregation order is deliberately not browser time, so the solver must align the clock beacons before replay. Fresh ablations on the shipped data show that using event file order changes 57 rows, sorting by query id changes 48, using listener file order changes 19, draining microtasks before activation changes 45, ignoring listener-registry mutation changes 57, treating passive preventDefault as canceling changes 18, rebuilding the bubble path from the live tree changes 18, and ignoring once removal changes 14. The crux is maintaining one coherent browser state across three different historical evidence models, not finding a single bad value or copying a short rule list."
+solution_explanation = "The reference first reconstructs q001-q060 from the chronological mutation log, then rebuilds q061-q096 from the q060 baseline and each named render-head ancestry. Starting from the q096 state it fits each recorder's affine local-to-coordinator clock from the synchronization beacons, sorts both listener registration and event tasks by recovered coordinator time, then replays the event intents chronologically. Each event snapshots its propagation path, invokes the active listener registry in capture/target/bubble order, applies synchronous callback mutations and nested dispatch immediately, performs click activation on the resulting live state, and only then drains queued microtasks before the next interaction. The same form engine then computes current ownership, disabledness, validation, normalized entries, and the exact GET or POST request."
+verification_explanation = "The verifier only parses /app/output/submission_requests.json and never imports or executes agent-produced code. It compares the exact schema and every value for all 168 rows. Existing q001-q096 answers are unchanged. On the added interaction phase, measured near-misses all score 0: event file order differs on 57 rows, query-id order on 48, listener file order on 19, microtasks-before-activation on 45, ignoring listener add/remove on 57, allowing passive listeners to cancel on 18, using a live rather than snapshotted propagation path on 18, ignoring once removal on 14, and ignoring listener-time submitter reparenting on 12. Missing output, malformed JSON, duplicate ids, extra fields, wrong ordering, or any row mismatch also scores 0."
+category = "Software"
+subcategory = "Frontend"
+tags = ["frontend", "html-forms", "dom-events", "event-loop", "formdata", "constraint-validation", "multipart", "dom-history"]
+expert_time_estimate_hours = 22.0
+relevant_experience = "Professional frontend or browser-platform experience with DOM event dispatch and listener lifetime, microtask timing, dynamic DOM ownership, HTML form controls and validation, form-associated custom elements, FormData/file values, request serialization, and incident reconstruction from concurrent browser traces."
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 120
+
+[agent]
+timeout_sec = 7200
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 2048
+storage_mb = 4096
+gpus = 0

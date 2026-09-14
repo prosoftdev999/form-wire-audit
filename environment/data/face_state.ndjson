@@ -1,0 +1,15 @@
+{"id":"f00_face","entries":[{"name":"token","kind":"text","value":"t0"},{"name":"token_meta","kind":"text","value":"100"},{"name":"attachment","kind":"file","filename":"receipt-0.txt","mime":"text/plain","path":"uploads/receipt-0.txt"}],"valid":true,"message":""}
+{"id":"f01_face","entries":[{"name":"token","kind":"text","value":"t1"}],"valid":true,"message":""}
+{"id":"f02_face","entries":[{"name":"token","kind":"text","value":"t2"},{"name":"attachment","kind":"file","filename":"blob-2.bin","mime":"application/octet-stream","path":"uploads/blob-2.bin"}],"valid":true,"message":""}
+{"id":"f03_face","entries":[{"name":"token","kind":"text","value":"t3"},{"name":"token_meta","kind":"text","value":"103"},{"name":"attachment","kind":"file","filename":"notes-3.txt","mime":"text/plain","path":"uploads/notes-3.txt"}],"valid":false,"message":"token expired"}
+{"id":"f04_face","entries":[{"name":"token","kind":"text","value":"t4"}],"valid":true,"message":""}
+{"id":"f05_face","entries":[{"name":"token","kind":"text","value":"t5"}],"valid":true,"message":""}
+{"id":"f06_face","entries":[{"name":"token","kind":"text","value":"t6"},{"name":"token_meta","kind":"text","value":"106"},{"name":"attachment","kind":"file","filename":"proof-6.json","mime":"application/json","path":"uploads/proof-6.json"}],"valid":true,"message":""}
+{"id":"f07_face","entries":[{"name":"token","kind":"text","value":"t7"}],"valid":true,"message":""}
+{"id":"f08_face","entries":[{"name":"token","kind":"text","value":"t8"},{"name":"attachment","kind":"file","filename":"empty-8.dat","mime":"application/octet-stream","path":"uploads/empty-8.dat"}],"valid":false,"message":"token expired"}
+{"id":"f09_face","entries":[{"name":"token","kind":"text","value":"t9"},{"name":"token_meta","kind":"text","value":"109"}],"valid":true,"message":""}
+{"id":"f10_face","entries":[{"name":"token","kind":"text","value":"t10"},{"name":"attachment","kind":"file","filename":"tail-10.txt","mime":"text/plain","path":"uploads/tail-10.txt"}],"valid":true,"message":""}
+{"id":"f11_face","entries":[{"name":"token","kind":"text","value":"t11"}],"valid":true,"message":""}
+{"id":"xface_00","entries":[{"name":"xface","kind":"text","value":"XF0"},{"name":"xflag","kind":"text","value":"0"}],"valid":true,"message":""}
+{"id":"xface_04","entries":[{"name":"xface","kind":"text","value":"XF4"},{"name":"xflag","kind":"text","value":"1"}],"valid":true,"message":""}
+{"id":"xface_08","entries":[{"name":"xface","kind":"text","value":"XF8"},{"name":"xflag","kind":"text","value":"2"}],"valid":false,"message":"external custom invalid"}
